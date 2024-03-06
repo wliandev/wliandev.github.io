@@ -7,10 +7,16 @@ a {
     color: #7FFFD4;
 }
 a:hover:not(.active) {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 body {
-  background-color: #101c1c; 
+    background: url("../credit-to-daniel-leone.jpg") no-repeat center center fixed, #101c1c;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-blend-mode: overlay;
+
 }
 h1 {
     color: white;
@@ -20,12 +26,12 @@ h1 {
 h3 {
     color: white;
     font-size: 1.5em;
-    margin: 0;
+    margin: 0em;
 }
 p {
     color: white;
     font-size: 1.2em;
-    margin: 0;
+    margin: 1em 0em;
 }
 ul.navbar {
   list-style-type: none;
@@ -47,13 +53,14 @@ ul.navbar li a {
 }
 ul.b {
     list-style-type: square;
+    margin: 1em;
 }
 ul.b li {
     color: white;
     font-size: 1.2em;
 }
 .active {
-  background-color: #1c2f2f;
+  background-color: #254444;
 }
 .container {
     width: 60%;
@@ -64,14 +71,20 @@ ul.b li {
     padding: 1em 0;  
 }
 .content {
-  background-color: #1c2f2f;
+  background-color: #254444;
   display: grid;
   grid-template-columns: auto;
   padding: 2em;
   
 }
-@media screen and (max-width: 700px) {
-  ul.navbar li a {padding: 1em 1em}
+@media screen and (max-width: 1000px) {
+  ul.navbar li a {padding: .9em .9em}
   h1{font-size: 2em;}
   .container{width: 90%;}
+}
+#projects {
+  display: none;
+}
+#projects:target {
+  display: block;
 }
