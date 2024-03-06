@@ -33,24 +33,6 @@ p {
     font-size: 1.2em;
     margin: 1em 0em;
 }
-ul.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-size: 1.2em;
-}
-ul.navbar li {
-  float: left;
-}
-
-ul.navbar li a {
-  display: block;
-  color: #66CDAA;
-  text-align: center;
-  padding: 1em 2em;
-  text-decoration: none;
-}
 ul.b {
     list-style-type: square;
     margin: 1em;
@@ -62,13 +44,16 @@ ul.b li {
 .active {
   background-color: #254444;
 }
+.banner {
+  padding: 1em 0;  
+}
+.banner>section {
+  display: none;
+}
 .container {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-}
-.banner {
-    padding: 1em 0;  
 }
 .content {
   background-color: #254444;
@@ -77,14 +62,55 @@ ul.b li {
   padding: 2em;
   
 }
+.content>section {
+  display: none;
+  flex-direction: column;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.2em;
+}
+.navbar>.nav {
+  display: block;
+  color: #66CDAA;
+  text-align: center;
+  padding: 1em 2em;
+  float: left;
+  text-decoration: none;
+} 
+
+.navbar>.nav:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:has(#home:checked) [for="home"],
+:has(#projects:checked) [for="projects"],
+:has(#resume:checked) [for="resume"],
+:has(#contact:checked) [for="contact"] {
+  cursor: pointer;
+  background-color: #254444;
+}
+
+/* .banner:has([id="home-banner"]:checked)>section:nth-child(1),
+.banner:has([id="projects-banner"]:checked)>section:nth-child(2), 
+.banner:has([id="resume-banner"]:checked)>section:nth-child(3),
+.banner:has([id="contact-banner"]:checked)>section:nth-child(4){
+  display: flex;
+} */
+  
+.content:has([id="home"]:checked)>section:nth-child(1),
+.content:has([id="projects"]:checked)>section:nth-child(2), 
+.content:has([id="resume"]:checked)>section:nth-child(3),
+.content:has([id="contact"]:checked)>section:nth-child(4){
+  display: flex;
+}
+
 @media screen and (max-width: 1000px) {
-  ul.navbar li a {padding: .9em .9em}
+  .navbar>.nav {padding: .9em .9em}
   h1{font-size: 2em;}
   .container{width: 90%;}
-}
-#projects {
-  display: none;
-}
-#projects:target {
-  display: block;
 }
