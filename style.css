@@ -46,7 +46,6 @@ ul.b li {
 }
 .banner {
   padding: 1em 0; 
-  display: none; 
 }
 .container {
     width: 60%;
@@ -64,14 +63,14 @@ ul.b li {
   display: none;
   flex-direction: column;
 }
-.navbar {
+ul.navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-size: 1.2em;
 }
-.navbar>.nav {
+ul.navbar li {
   display: block;
   color: #66CDAA;
   text-align: center;
@@ -80,31 +79,9 @@ ul.b li {
   text-decoration: none;
 } 
 
-.navbar>.nav:hover {
+ul.navbar li:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-
-:has(#home:checked) [for="home"],
-:has(#projects:checked) [for="projects"],
-:has(#resume:checked) [for="resume"],
-:has(#contact:checked) [for="contact"] {
-  cursor: pointer;
-  background-color: #254444;
-}
-
-.container:has([id="home"]:checked)>.banner:nth-child(1),
-.container:has([id="projects"]:checked)>.banner:nth-child(2), 
-.container:has([id="resume"]:checked)>.banner:nth-child(3),
-.container:has([id="contact"]:checked)>.banner:nth-child(4){
-  display: flex;
-}
-  
-.content:has([id="home"]:checked)>section:nth-child(1),
-.content:has([id="projects"]:checked)>section:nth-child(2), 
-.content:has([id="resume"]:checked)>section:nth-child(3),
-.content:has([id="contact"]:checked)>section:nth-child(4){
-  display: flex;
 }
 
 @media screen and (max-width: 1000px) {

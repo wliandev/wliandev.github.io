@@ -9,21 +9,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
     <link rel="manifest" href="favicons/site.webmanifest">
 </head>
+<script src="script.js" defer></script>
 <body>
-    <div class="container">
-        <div class="banner"><h1> <b>wliandev</b> / home</h1></div>
-        <div class="banner"><h1> <b>wliandev</b> / projects</h1></div>
-        <div class="banner"><h1> <b>wliandev</b> / resume</h1></div>
-        <div class="banner"><h1> <b>wliandev</b> / contact</h1></div>
-        <nav class="navbar">
-            <label class="nav" for="home">home</label>
-            <label class="nav" for="projects">projects</label>
-            <label class="nav" for="resume">resume</label>
-            <label class="nav" for="contact">contact</label>
-        </nav>
-        <article class="content">
+    <div class="container" id="js">
+        <div id="banner"><h1><b>wliandev</b> / home</h1></div>
+        <ul class="navbar">
+            <li class="navlink" onclick="openTab(event, 'home')" id="default">home</li>
+            <li class="navlink" onclick="openTab(event, 'projects')">projects</li>
+            <li class="navlink" onclick="openTab(event, 'resume')">resume</li>
+            <li class="navlink" onclick="openTab(event, 'contact')">contact</li>
+        </ul>
+        <div class="content">
             <!-- index -->
-            <section>
+            <div class="tabcontent" id="home">
                 <div>
                     <h3>Hello! 👋 I'm Lillian.</h3>
                     <p>I am a software developer and designer. I believe in making code as simple as it needs to be. <p>
@@ -39,9 +37,9 @@
                         <li>Looking: for work!</li>
                     </ul>
                 </div>
-            </section>
+            </div>
             <!-- projects -->
-            <section>
+            <div class= "tabcontent" id="projects">
                 <div>
                     <h3>Unannounced FinTech App</h3>
                     <p>Final project for CS 568.</p>
@@ -54,13 +52,13 @@
                     <h3><a href="https://play.google.com/store/apps/details?id=watermelons.myfridge">UseByApp</a></h3>
                     <p>A grocery management app built to challenge the food waste problem rampant in college kitchens. </p>
                 </div>
-            </section>
+            </div>
             <!-- resume -->
-            <section>
+            <div class ="tabcontent" id="resume">
                 <p>You can view a PDF of my resume <a href="resume.pdf">here</a>. </p>
-            </section>
+            </div>
             <!-- contact -->
-            <section>
+            <div class="tabcontent" id="contact">
                 <div>
                     <p>If you are looking for a software developer to join your team, send me an email at <a href="mailto:lw709@scarletmail.rutgers.edu">lw709@scarletmail.rutgers.edu</a>. </p>
                     <p>I am also on the following platforms:</p>
@@ -69,12 +67,52 @@
                         <li>LinkedIn: <a href="https://www.linkedin.com/in/lillianwang24/">lillianwang24</a></li>
                     </ul>
                 </div>
-            </section>
-            <input type="radio" name="navbar" id="home" hidden checked />
-            <input type="radio" name="navbar" id="projects" hidden />
-            <input type="radio" name="navbar" id="resume" hidden />
-            <input type="radio" name="navbar" id="contact" hidden />
-        </article>
+            </div>
+        </div>
     </div>
 </body>
+<noscript>
+    <style type="text/css">
+        #js {display:none;}
+    </style>
+    <div class="container">
+
+        <p>You are viewing a single page version of this website because you have JavaScript disabled.</p>
+        <div id="banner"><h1><b>wliandev</b> / home</h1></div>
+        <div class="content">
+            <div>
+                <h3>Hello! 👋 I'm Lillian.</h3>
+                <p>I am a software developer and designer. I believe in making code as simple as it needs to be. <p>
+                <p>I am currently pursuing a Master's degree in Computer Science at Rutgers University. I previously graduated with a Bachelor's degree in Informatics from UC Irvine. You can find my resume <a href="resume.pdf">here</a>.
+            </div>
+            <div>
+                <h3>Current Status</h3>
+                <ul class="b">
+                    <li>Making: <a href="https://github.com/wliandev/TomatoTube">TomatoTube</a>, unannounced fintech app</li>
+                    <li>Studying: Linear Algebra (again)</li>
+                    <li>Reading: <a href="https://gist.github.com/veekaybee/be375ab33085102f9027853128dc5f0e">Normcore LLM Reading List</a></li>
+                    <li>Watching: Better Call Saul</li>
+                    <li>Looking: for work!</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Projects</h3>
+                <ul class="b">
+                    <li><a href="https://wliandev.github.io/TomatoTube/">TomatoTube</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=watermelons.myfridge">UseByApp</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul class="b">
+                    <li>Email: <a href="mailto:lw709@scarletmail.rutgers.edu">lw709@scarletmail.rutgers.edu</a></li>
+                    <li>Github: <a href="https://github.com/wliandev/">wliandev</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/lillianwang24/">lillianwang24</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</noscript>
 </html> 
+
+<!-- ToDo: fixed background, mobile layout, contact page padding -->
